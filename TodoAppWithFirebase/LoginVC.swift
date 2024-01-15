@@ -6,17 +6,26 @@
 //
 
 import UIKit
-import FirebaseAuth
 import SnapKit
+
+// 파이어베이스
+import FirebaseAuth
+
+// 애플 로그인
 import AuthenticationServices
 import CryptoKit
+
+// 카카오 로그인
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginVC: UIViewController {
     
     
     @IBOutlet weak var loginWithAppleButton: UIButton!
+    @IBOutlet weak var loginWithKaKaoButton: UIButton!
     
-
     var currentNonce: String?
     
     var viewModel = ViewModel()
@@ -73,6 +82,7 @@ class LoginVC: UIViewController {
     // MARK: - UI
     private func configureUI() {
         loginWithAppleButton.addTarget(self, action: #selector(loginWithAppleButtonTapped), for: .touchUpInside)
+        loginWithKaKaoButton.addTarget(self, action: #selector(loginWithKaKaoButtonTapped), for: .touchUpInside)
     }
     
     @objc func loginWithAppleButtonTapped() {
@@ -80,54 +90,59 @@ class LoginVC: UIViewController {
         startSignInWithAppleFlow()
     }
     
+    @objc func loginWithKaKaoButtonTapped() {
+        print(#fileID, #function, #line, "- 카카오 로그인")
+        startSignInWithKaKaoFlow()
+    }
+    
     
 }
 //MARK: - 애플 로그인
 extension LoginVC {
     private func randomNonceString(length: Int = 32) -> String {
-      precondition(length > 0)
-      var randomBytes = [UInt8](repeating: 0, count: length)
-      let errorCode = SecRandomCopyBytes(kSecRandomDefault, randomBytes.count, &randomBytes)
-      if errorCode != errSecSuccess {
-        fatalError(
-          "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
-        )
-      }
-
-      let charset: [Character] =
+        precondition(length > 0)
+        var randomBytes = [UInt8](repeating: 0, count: length)
+        let errorCode = SecRandomCopyBytes(kSecRandomDefault, randomBytes.count, &randomBytes)
+        if errorCode != errSecSuccess {
+            fatalError(
+                "Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)"
+            )
+        }
+        
+        let charset: [Character] =
         Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
-
-      let nonce = randomBytes.map { byte in
-        // Pick a random character from the set, wrapping around if needed.
-        charset[Int(byte) % charset.count]
-      }
-
-      return String(nonce)
+        
+        let nonce = randomBytes.map { byte in
+            // Pick a random character from the set, wrapping around if needed.
+            charset[Int(byte) % charset.count]
+        }
+        
+        return String(nonce)
     }
-
+    
     private func sha256(_ input: String) -> String {
-      let inputData = Data(input.utf8)
-      let hashedData = SHA256.hash(data: inputData)
-      let hashString = hashedData.compactMap {
-        String(format: "%02x", $0)
-      }.joined()
-
-      return hashString
+        let inputData = Data(input.utf8)
+        let hashedData = SHA256.hash(data: inputData)
+        let hashString = hashedData.compactMap {
+            String(format: "%02x", $0)
+        }.joined()
+        
+        return hashString
     }
     
     /// 애플 로그인 Flow
     func startSignInWithAppleFlow() {
-      let nonce = randomNonceString()
-      currentNonce = nonce
-      let appleIDProvider = ASAuthorizationAppleIDProvider()
-      let request = appleIDProvider.createRequest()
-      request.requestedScopes = [.fullName, .email]
-      request.nonce = sha256(nonce)
-
-      let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-      authorizationController.delegate = self
-      authorizationController.presentationContextProvider = self
-      authorizationController.performRequests()
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = sha256(nonce)
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
 }
 
@@ -139,43 +154,109 @@ extension LoginVC: ASAuthorizationControllerPresentationContextProviding {
 }
 
 extension LoginVC: ASAuthorizationControllerDelegate {
-
-  func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-    if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-      guard let nonce = currentNonce else {
-        fatalError("Invalid state: A login callback was received, but no login request was sent.")
-      }
-      guard let appleIDToken = appleIDCredential.identityToken else {
-        print("Unable to fetch identity token")
-        return
-      }
-      guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-        print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
-        return
-      }
-      // Initialize a Firebase credential, including the user's full name.
-      let credential = OAuthProvider.appleCredential(withIDToken: idTokenString,
-                                                        rawNonce: nonce,
-                                                        fullName: appleIDCredential.fullName)
-      // Sign in with Firebase.
-      Auth.auth().signIn(with: credential) { (authResult, error) in
-          if (error != nil) {
-          // Error. If error.code == .MissingOrInvalidNonce, make sure
-          // you're sending the SHA256-hashed nonce as a hex string with
-          // your request to Apple.
-              print(error?.localizedDescription)
-          return
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            guard let nonce = currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            guard let appleIDToken = appleIDCredential.identityToken else {
+                print("Unable to fetch identity token")
+                return
+            }
+            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                return
+            }
+            // Initialize a Firebase credential, including the user's full name.
+            let credential = OAuthProvider.appleCredential(withIDToken: idTokenString,
+                                                           rawNonce: nonce,
+                                                           fullName: appleIDCredential.fullName)
+            // Sign in with Firebase.
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+                if (error != nil) {
+                    // Error. If error.code == .MissingOrInvalidNonce, make sure
+                    // you're sending the SHA256-hashed nonce as a hex string with
+                    // your request to Apple.
+                    print(error?.localizedDescription)
+                    return
+                }
+                // User is signed in to Firebase with Apple.
+                // ...
+                print(#fileID, #function, #line, "- 애플 로그인 성공")
+            }
         }
-        // User is signed in to Firebase with Apple.
-        // ...
-          print(#fileID, #function, #line, "- 애플 로그인 성공")
-      }
     }
-  }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+        print("Sign in with Apple errored: \(error)")
+    }
+    
+}
 
-  func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    // Handle error.
-    print("Sign in with Apple errored: \(error)")
-  }
-
+//MARK: - 카카오 로그인
+extension LoginVC {
+    
+    /// 카카오톡 로그인 시작
+    func startSignInWithKaKaoFlow() {
+        print(#fileID, #function, #line, "- ")
+        fetchKaKaoOpenIdToken(completion: { idToken in
+            guard let idToken = idToken else { return }
+            
+            let credential = OAuthProvider.credential(
+                withProviderID: "oidc.kakao",  // As registered in Firebase console.
+                idToken: idToken,  // ID token from OpenID Connect flow.
+                rawNonce: nil
+            )
+            
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if (error != nil) {
+                    // Handle error.
+                    print(#fileID, #function, #line, "- 에러: \(error)")
+                    return
+                }
+                // User is signed in.
+                // IdP data available in authResult?.additionalUserInfo?.profile
+                print(#fileID, #function, #line, "- 카카오 로그인 성공: \(authResult)")
+            }
+            
+        })
+        
+        
+    } // kakaoLoginWithFirebase
+    
+    /// 카카오 로그인 하고 OpenID 토큰 가져오기
+    func fetchKaKaoOpenIdToken(completion: @escaping (String?) -> Void) {
+        // 카카오톡 실행 가능 여부 확인
+        // 카카오톡이 설치가 되어 있으면
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            // 카카오톡으로 로그인 시도
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("loginWithKakaoTalk() success.")
+                    
+                    //do something
+                    _ = oauthToken
+                    completion(oauthToken?.idToken)
+                }
+            }
+        } else {
+            // 웹 브라우저로 로그인 시도
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("loginWithKakaoAccount() success.")
+                    
+                    //do something
+                    _ = oauthToken
+                    completion(oauthToken?.idToken)
+                }
+            }
+        }
+    }
+    
 }

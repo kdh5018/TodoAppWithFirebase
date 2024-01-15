@@ -7,6 +7,10 @@
 
 import UIKit
 
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -22,6 +26,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "LoginVC", bundle: .main)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         window?.rootViewController = loginVC
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
