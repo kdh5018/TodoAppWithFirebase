@@ -40,12 +40,26 @@
 		7618AFD52B4FBB1C00C6F4D5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7618AFD42B4FBB1C00C6F4D5 /* ViewModel.swift */; };
 		7618AFD72B4FBB3A00C6F4D5 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7618AFD62B4FBB3A00C6F4D5 /* LoginVC.storyboard */; };
 		7618AFD92B4FBB4A00C6F4D5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7618AFD82B4FBB4A00C6F4D5 /* LoginVC.swift */; };
+		764465552B54F6EA002BB96C /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 764465542B54F6EA002BB96C /* KakaoSDK */; };
+		764465572B54F6EA002BB96C /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 764465562B54F6EA002BB96C /* KakaoSDKAuth */; };
+		764465592B54F6EA002BB96C /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 764465582B54F6EA002BB96C /* KakaoSDKCommon */; };
+		7644655B2B54F6EA002BB96C /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 7644655A2B54F6EA002BB96C /* KakaoSDKUser */; };
+		7644655D2B55105B002BB96C /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644655C2B55105B002BB96C /* UIViewController+Ext.swift */; };
+		764465632B55163B002BB96C /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764465622B55163B002BB96C /* SplashVC.swift */; };
+		764465652B55165F002BB96C /* SplashVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764465642B55165F002BB96C /* SplashVC.storyboard */; };
+		764465672B55181F002BB96C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764465662B55181F002BB96C /* AuthManager.swift */; };
+		7644656E2B551F04002BB96C /* TodoVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7644656D2B551F04002BB96C /* TodoVC.storyboard */; };
+		764465702B551F0F002BB96C /* TodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644656F2B551F0F002BB96C /* TodoVC.swift */; };
 		767D60BA2B4FB72B00CFFF1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D60B92B4FB72B00CFFF1B /* AppDelegate.swift */; };
 		767D60BC2B4FB72B00CFFF1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D60BB2B4FB72B00CFFF1B /* SceneDelegate.swift */; };
 		767D60BE2B4FB72B00CFFF1B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D60BD2B4FB72B00CFFF1B /* MainVC.swift */; };
 		767D60C12B4FB72B00CFFF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767D60BF2B4FB72B00CFFF1B /* Main.storyboard */; };
 		767D60C32B4FB72C00CFFF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 767D60C22B4FB72C00CFFF1B /* Assets.xcassets */; };
 		767D60C62B4FB72C00CFFF1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767D60C42B4FB72C00CFFF1B /* LaunchScreen.storyboard */; };
+		767FC0542B5654AD00C61A1B /* TodoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767FC0532B5654AD00C61A1B /* TodoListCell.xib */; };
+		767FC0562B5654CB00C61A1B /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FC0552B5654CB00C61A1B /* TodoListCell.swift */; };
+		767FC0592B5657E400C61A1B /* AddTodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767FC0582B5657E400C61A1B /* AddTodoVC.swift */; };
+		767FC05B2B5657EC00C61A1B /* AddTodoVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 767FC05A2B5657EC00C61A1B /* AddTodoVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +69,13 @@
 		7618AFD62B4FBB3A00C6F4D5 /* LoginVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
 		7618AFD82B4FBB4A00C6F4D5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7618AFDA2B4FBCAF00C6F4D5 /* TodoAppWithFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoAppWithFirebase.entitlements; sourceTree = "<group>"; };
+		764465522B54F294002BB96C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		7644655C2B55105B002BB96C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		764465622B55163B002BB96C /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		764465642B55165F002BB96C /* SplashVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashVC.storyboard; sourceTree = "<group>"; };
+		764465662B55181F002BB96C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7644656D2B551F04002BB96C /* TodoVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoVC.storyboard; sourceTree = "<group>"; };
+		7644656F2B551F0F002BB96C /* TodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoVC.swift; sourceTree = "<group>"; };
 		767D60B62B4FB72B00CFFF1B /* TodoAppWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		767D60B92B4FB72B00CFFF1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		767D60BB2B4FB72B00CFFF1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +84,10 @@
 		767D60C22B4FB72C00CFFF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		767D60C52B4FB72C00CFFF1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		767D60C72B4FB72C00CFFF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767FC0532B5654AD00C61A1B /* TodoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListCell.xib; sourceTree = "<group>"; };
+		767FC0552B5654CB00C61A1B /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
+		767FC0582B5657E400C61A1B /* AddTodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoVC.swift; sourceTree = "<group>"; };
+		767FC05A2B5657EC00C61A1B /* AddTodoVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodoVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +113,10 @@
 				7618AFB22B4FB9F100C6F4D5 /* FirebaseFunctions in Frameworks */,
 				7618AFC82B4FB9F100C6F4D5 /* FirebaseStorageCombine-Community in Frameworks */,
 				7618AFD02B4FBA6A00C6F4D5 /* SnapKit in Frameworks */,
+				764465592B54F6EA002BB96C /* KakaoSDKCommon in Frameworks */,
 				7618AFC22B4FB9F100C6F4D5 /* FirebaseRemoteConfig in Frameworks */,
+				7644655B2B54F6EA002BB96C /* KakaoSDKUser in Frameworks */,
+				764465552B54F6EA002BB96C /* KakaoSDK in Frameworks */,
 				7618AF9E2B4FB9F100C6F4D5 /* FirebaseAppDistribution-Beta in Frameworks */,
 				7618AFA22B4FB9F100C6F4D5 /* FirebaseAuthCombine-Community in Frameworks */,
 				7618AFC02B4FB9F100C6F4D5 /* FirebasePerformance in Frameworks */,
@@ -98,6 +126,7 @@
 				7618AFAE2B4FB9F100C6F4D5 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				7618AFBE2B4FB9F100C6F4D5 /* FirebaseMessaging in Frameworks */,
 				7618AFBA2B4FB9F100C6F4D5 /* FirebaseInstallations in Frameworks */,
+				764465572B54F6EA002BB96C /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +137,51 @@
 			isa = PBXGroup;
 			children = (
 				7618AFD22B4FBA8B00C6F4D5 /* Button.swift */,
+				7644655C2B55105B002BB96C /* UIViewController+Ext.swift */,
+				764465662B55181F002BB96C /* AuthManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7644655E2B551343002BB96C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				767FC0572B5657A700C61A1B /* AddTodo */,
+				767FC0522B56549D00C61A1B /* TableViewCell */,
+				764465612B5515B7002BB96C /* Splash */,
+				7644655F2B55135C002BB96C /* Main */,
+				764465602B551363002BB96C /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7644655F2B55135C002BB96C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				767D60BF2B4FB72B00CFFF1B /* Main.storyboard */,
+				767D60BD2B4FB72B00CFFF1B /* MainVC.swift */,
+				7644656D2B551F04002BB96C /* TodoVC.storyboard */,
+				7644656F2B551F0F002BB96C /* TodoVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		764465602B551363002BB96C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7618AFD62B4FBB3A00C6F4D5 /* LoginVC.storyboard */,
+				7618AFD82B4FBB4A00C6F4D5 /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		764465612B5515B7002BB96C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				764465622B55163B002BB96C /* SplashVC.swift */,
+				764465642B55165F002BB96C /* SplashVC.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		767D60AD2B4FB72B00CFFF1B = {
@@ -132,20 +204,36 @@
 			isa = PBXGroup;
 			children = (
 				7618AFDA2B4FBCAF00C6F4D5 /* TodoAppWithFirebase.entitlements */,
+				7644655E2B551343002BB96C /* View */,
 				7618AFD12B4FBA7800C6F4D5 /* Utils */,
 				767D60B92B4FB72B00CFFF1B /* AppDelegate.swift */,
 				767D60BB2B4FB72B00CFFF1B /* SceneDelegate.swift */,
-				767D60BD2B4FB72B00CFFF1B /* MainVC.swift */,
-				767D60BF2B4FB72B00CFFF1B /* Main.storyboard */,
 				767D60C22B4FB72C00CFFF1B /* Assets.xcassets */,
 				767D60C42B4FB72C00CFFF1B /* LaunchScreen.storyboard */,
 				767D60C72B4FB72C00CFFF1B /* Info.plist */,
 				7618AF902B4FB9CD00C6F4D5 /* GoogleService-Info.plist */,
 				7618AFD42B4FBB1C00C6F4D5 /* ViewModel.swift */,
-				7618AFD62B4FBB3A00C6F4D5 /* LoginVC.storyboard */,
-				7618AFD82B4FBB4A00C6F4D5 /* LoginVC.swift */,
+				764465522B54F294002BB96C /* Config.xcconfig */,
 			);
 			path = TodoAppWithFirebase;
+			sourceTree = "<group>";
+		};
+		767FC0522B56549D00C61A1B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				767FC0532B5654AD00C61A1B /* TodoListCell.xib */,
+				767FC0552B5654CB00C61A1B /* TodoListCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		767FC0572B5657A700C61A1B /* AddTodo */ = {
+			isa = PBXGroup;
+			children = (
+				767FC0582B5657E400C61A1B /* AddTodoVC.swift */,
+				767FC05A2B5657EC00C61A1B /* AddTodoVC.storyboard */,
+			);
+			path = AddTodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +281,10 @@
 				7618AFC52B4FB9F100C6F4D5 /* FirebaseStorage */,
 				7618AFC72B4FB9F100C6F4D5 /* FirebaseStorageCombine-Community */,
 				7618AFCF2B4FBA6A00C6F4D5 /* SnapKit */,
+				764465542B54F6EA002BB96C /* KakaoSDK */,
+				764465562B54F6EA002BB96C /* KakaoSDKAuth */,
+				764465582B54F6EA002BB96C /* KakaoSDKCommon */,
+				7644655A2B54F6EA002BB96C /* KakaoSDKUser */,
 			);
 			productName = TodoAppWithFirebase;
 			productReference = 767D60B62B4FB72B00CFFF1B /* TodoAppWithFirebase.app */;
@@ -225,6 +317,7 @@
 			packageReferences = (
 				7618AF922B4FB9F000C6F4D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7618AFCE2B4FBA6A00C6F4D5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				764465532B54F6EA002BB96C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = 767D60B72B4FB72B00CFFF1B /* Products */;
 			projectDirPath = "";
@@ -240,7 +333,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767FC05B2B5657EC00C61A1B /* AddTodoVC.storyboard in Resources */,
+				7644656E2B551F04002BB96C /* TodoVC.storyboard in Resources */,
+				764465652B55165F002BB96C /* SplashVC.storyboard in Resources */,
 				767D60C62B4FB72C00CFFF1B /* LaunchScreen.storyboard in Resources */,
+				767FC0542B5654AD00C61A1B /* TodoListCell.xib in Resources */,
 				7618AF912B4FB9CD00C6F4D5 /* GoogleService-Info.plist in Resources */,
 				767D60C32B4FB72C00CFFF1B /* Assets.xcassets in Resources */,
 				7618AFD72B4FBB3A00C6F4D5 /* LoginVC.storyboard in Resources */,
@@ -255,10 +352,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764465702B551F0F002BB96C /* TodoVC.swift in Sources */,
 				7618AFD52B4FBB1C00C6F4D5 /* ViewModel.swift in Sources */,
+				764465672B55181F002BB96C /* AuthManager.swift in Sources */,
 				767D60BE2B4FB72B00CFFF1B /* MainVC.swift in Sources */,
+				767FC0562B5654CB00C61A1B /* TodoListCell.swift in Sources */,
+				7644655D2B55105B002BB96C /* UIViewController+Ext.swift in Sources */,
+				767FC0592B5657E400C61A1B /* AddTodoVC.swift in Sources */,
 				7618AFD92B4FBB4A00C6F4D5 /* LoginVC.swift in Sources */,
 				767D60BA2B4FB72B00CFFF1B /* AppDelegate.swift in Sources */,
+				764465632B55163B002BB96C /* SplashVC.swift in Sources */,
 				767D60BC2B4FB72B00CFFF1B /* SceneDelegate.swift in Sources */,
 				7618AFD32B4FBA8B00C6F4D5 /* Button.swift in Sources */,
 			);
@@ -288,6 +391,7 @@
 /* Begin XCBuildConfiguration section */
 		767D60C82B4FB72C00CFFF1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764465522B54F294002BB96C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -351,6 +455,7 @@
 		};
 		767D60C92B4FB72C00CFFF1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764465522B54F294002BB96C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -407,6 +512,7 @@
 		};
 		767D60CB2B4FB72C00CFFF1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764465522B54F294002BB96C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +546,7 @@
 		};
 		767D60CC2B4FB72C00CFFF1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764465522B54F294002BB96C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -509,6 +616,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.0;
+			};
+		};
+		764465532B54F6EA002BB96C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.20.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -653,6 +768,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7618AFCE2B4FBA6A00C6F4D5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		764465542B54F6EA002BB96C /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764465532B54F6EA002BB96C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		764465562B54F6EA002BB96C /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764465532B54F6EA002BB96C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		764465582B54F6EA002BB96C /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764465532B54F6EA002BB96C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		7644655A2B54F6EA002BB96C /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764465532B54F6EA002BB96C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

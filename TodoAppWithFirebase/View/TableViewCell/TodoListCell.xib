@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="A1x-Pi-1Ds" customClass="TodoListCell" customModule="TodoAppWithFirebase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="508" height="49"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A1x-Pi-1Ds" id="ncu-iM-Wzh">
+                <rect key="frame" x="0.0" y="0.0" width="508" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할일 입력 라벨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIp-d2-pQx">
+                        <rect key="frame" x="130" y="10" width="368" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월 31일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VO-R1-SMP">
+                        <rect key="frame" x="20" y="10" width="69" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jIp-d2-pQx" firstAttribute="top" secondItem="ncu-iM-Wzh" secondAttribute="top" constant="10" id="BWA-vS-RQp"/>
+                    <constraint firstAttribute="trailing" secondItem="jIp-d2-pQx" secondAttribute="trailing" constant="10" id="L3E-hg-LEK"/>
+                    <constraint firstItem="jIp-d2-pQx" firstAttribute="leading" secondItem="ncu-iM-Wzh" secondAttribute="leading" constant="130" id="dEY-r7-Hhk"/>
+                    <constraint firstItem="1VO-R1-SMP" firstAttribute="leading" secondItem="ncu-iM-Wzh" secondAttribute="leading" constant="20" symbolic="YES" id="drN-1y-9qV"/>
+                    <constraint firstAttribute="bottom" secondItem="jIp-d2-pQx" secondAttribute="bottom" constant="10" id="voK-N9-HjE"/>
+                    <constraint firstItem="1VO-R1-SMP" firstAttribute="top" secondItem="ncu-iM-Wzh" secondAttribute="top" constant="10" id="z08-kc-8Hx"/>
+                    <constraint firstAttribute="bottom" secondItem="1VO-R1-SMP" secondAttribute="bottom" constant="10" id="zvW-mG-IgE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="DateWhenTodo" destination="1VO-R1-SMP" id="m2v-1H-0fo"/>
+                <outlet property="WhatTodo" destination="jIp-d2-pQx" id="biZ-BW-lWa"/>
+            </connections>
+            <point key="canvasLocation" x="218.32061068702288" y="88.380281690140848"/>
+        </tableViewCell>
+    </objects>
+</document>

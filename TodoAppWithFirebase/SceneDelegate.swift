@@ -21,11 +21,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        guard let _ = (scene as? UIWindowScene) else { return }
+        // 1. scene 캡처
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let storyboard = UIStoryboard(name: "LoginVC", bundle: .main)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        window?.rootViewController = loginVC
+        // 2. window scene을 가져오는 windowScene을 생성자를 사용하여 UIWindow 생성
+        let window = UIWindow(windowScene: windowScene)
+        
+        // 3. view 계청을 프로그래밍으로 만들기
+        
+        // 4. viewController로 window의 root view controller를 설정
+        
+        let navigationController = UINavigationController(rootViewController: SplashVC.getInstance())
+        window.rootViewController = navigationController
+        
+        // 5. window를 설정하고 makeKeyAndVisible()
+        self.window = window
+        window.makeKeyAndVisible()
+        
+        
+        
+        
+//        guard let _ = (scene as? UIWindowScene) else { return }
+//        
+//        let storyboard = UIStoryboard(name: "LoginVC", bundle: .main)
+//        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//        window?.rootViewController = loginVC
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
