@@ -16,6 +16,8 @@ class LoginVC: UIViewController {
     
     var viewModel = ViewModel()
     
+    var userId: String?
+    
     // 상단뷰
     lazy var aboveView = UIView()
     // 하단뷰
@@ -33,7 +35,7 @@ class LoginVC: UIViewController {
     func setupUI() {
         // 1. 상단 뷰
         self.view.addSubview(aboveView)
-        aboveView.backgroundColor = .systemBlue
+        aboveView.backgroundColor = UIColor(red: 21.0/255.0, green: 55.0/255.0, blue: 115.0/255.0, alpha: 1.0)
         aboveView.layer.shadowColor = UIColor.black.cgColor
         aboveView.layer.shadowOpacity = 1
         aboveView.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -51,7 +53,7 @@ class LoginVC: UIViewController {
         self.view.addSubview(belowView)
         // 버튼 보이게끔 하기 위해 뒤로 보냄
         self.view.sendSubviewToBack(belowView)
-        belowView.backgroundColor = .yellow
+        belowView.backgroundColor = UIColor(red: 253.0/255.0, green: 250.0/255.0, blue: 175.0/255.0, alpha: 1.0)
         belowView.snp.makeConstraints { (make) -> Void in
             make.width.height.equalTo(50)
             make.top.equalTo(aboveView).offset(104)
@@ -60,7 +62,7 @@ class LoginVC: UIViewController {
             make.right.equalTo(self.view).offset(0)
         }
         
-    }
+    } // setupUI
     
     // MARK: - UI
     private func configureUI() {
@@ -72,6 +74,7 @@ class LoginVC: UIViewController {
         print(#fileID, #function, #line, "- 애플 로그인")
         AuthManager.shared.startSignInWithAppleFlow(presentingVC: self, completion: { (uid: String?, error: Error?) in
             self.handleUserLoggedInEvent(uid)
+
         })
     }
     
@@ -82,11 +85,10 @@ class LoginVC: UIViewController {
         })
     }
     
-    fileprivate func handleUserLoggedInEvent(_ uid: String?) {
+    func handleUserLoggedInEvent(_ uid: String?) {
         if let uid = uid {
             UserDefaults.standard.setValue(uid, forKey: "uid")
-            self.navigationController?.pushViewController(MainVC.getInstance(), animated: true)
-            
+            self.navigationController?.pushViewController(MainVC.getInstance("Main"), animated: true)
         }
     }
     

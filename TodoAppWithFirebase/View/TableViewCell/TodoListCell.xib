@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할일 입력 라벨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIp-d2-pQx">
-                        <rect key="frame" x="130" y="10" width="368" height="29"/>
+                        <rect key="frame" x="120" y="10" width="378" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                 <constraints>
                     <constraint firstItem="jIp-d2-pQx" firstAttribute="top" secondItem="ncu-iM-Wzh" secondAttribute="top" constant="10" id="BWA-vS-RQp"/>
                     <constraint firstAttribute="trailing" secondItem="jIp-d2-pQx" secondAttribute="trailing" constant="10" id="L3E-hg-LEK"/>
-                    <constraint firstItem="jIp-d2-pQx" firstAttribute="leading" secondItem="ncu-iM-Wzh" secondAttribute="leading" constant="130" id="dEY-r7-Hhk"/>
+                    <constraint firstItem="jIp-d2-pQx" firstAttribute="leading" secondItem="ncu-iM-Wzh" secondAttribute="leading" constant="120" id="dEY-r7-Hhk"/>
                     <constraint firstItem="1VO-R1-SMP" firstAttribute="leading" secondItem="ncu-iM-Wzh" secondAttribute="leading" constant="20" symbolic="YES" id="drN-1y-9qV"/>
                     <constraint firstAttribute="bottom" secondItem="jIp-d2-pQx" secondAttribute="bottom" constant="10" id="voK-N9-HjE"/>
                     <constraint firstItem="1VO-R1-SMP" firstAttribute="top" secondItem="ncu-iM-Wzh" secondAttribute="top" constant="10" id="z08-kc-8Hx"/>

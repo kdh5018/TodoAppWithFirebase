@@ -40,6 +40,8 @@
 		7618AFD52B4FBB1C00C6F4D5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7618AFD42B4FBB1C00C6F4D5 /* ViewModel.swift */; };
 		7618AFD72B4FBB3A00C6F4D5 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7618AFD62B4FBB3A00C6F4D5 /* LoginVC.storyboard */; };
 		7618AFD92B4FBB4A00C6F4D5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7618AFD82B4FBB4A00C6F4D5 /* LoginVC.swift */; };
+		76324D3B2B57A1760068B68F /* Reuseidentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76324D3A2B57A1760068B68F /* Reuseidentifier.swift */; };
+		76324D3D2B57A1950068B68F /* Nibbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76324D3C2B57A1950068B68F /* Nibbed.swift */; };
 		764465552B54F6EA002BB96C /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 764465542B54F6EA002BB96C /* KakaoSDK */; };
 		764465572B54F6EA002BB96C /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 764465562B54F6EA002BB96C /* KakaoSDKAuth */; };
 		764465592B54F6EA002BB96C /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 764465582B54F6EA002BB96C /* KakaoSDKCommon */; };
@@ -48,8 +50,6 @@
 		764465632B55163B002BB96C /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764465622B55163B002BB96C /* SplashVC.swift */; };
 		764465652B55165F002BB96C /* SplashVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764465642B55165F002BB96C /* SplashVC.storyboard */; };
 		764465672B55181F002BB96C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764465662B55181F002BB96C /* AuthManager.swift */; };
-		7644656E2B551F04002BB96C /* TodoVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7644656D2B551F04002BB96C /* TodoVC.storyboard */; };
-		764465702B551F0F002BB96C /* TodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644656F2B551F0F002BB96C /* TodoVC.swift */; };
 		767D60BA2B4FB72B00CFFF1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D60B92B4FB72B00CFFF1B /* AppDelegate.swift */; };
 		767D60BC2B4FB72B00CFFF1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D60BB2B4FB72B00CFFF1B /* SceneDelegate.swift */; };
 		767D60BE2B4FB72B00CFFF1B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767D60BD2B4FB72B00CFFF1B /* MainVC.swift */; };
@@ -69,13 +69,13 @@
 		7618AFD62B4FBB3A00C6F4D5 /* LoginVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
 		7618AFD82B4FBB4A00C6F4D5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7618AFDA2B4FBCAF00C6F4D5 /* TodoAppWithFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoAppWithFirebase.entitlements; sourceTree = "<group>"; };
+		76324D3A2B57A1760068B68F /* Reuseidentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reuseidentifier.swift; sourceTree = "<group>"; };
+		76324D3C2B57A1950068B68F /* Nibbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nibbed.swift; sourceTree = "<group>"; };
 		764465522B54F294002BB96C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		7644655C2B55105B002BB96C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		764465622B55163B002BB96C /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		764465642B55165F002BB96C /* SplashVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashVC.storyboard; sourceTree = "<group>"; };
 		764465662B55181F002BB96C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		7644656D2B551F04002BB96C /* TodoVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoVC.storyboard; sourceTree = "<group>"; };
-		7644656F2B551F0F002BB96C /* TodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoVC.swift; sourceTree = "<group>"; };
 		767D60B62B4FB72B00CFFF1B /* TodoAppWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		767D60B92B4FB72B00CFFF1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		767D60BB2B4FB72B00CFFF1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +139,8 @@
 				7618AFD22B4FBA8B00C6F4D5 /* Button.swift */,
 				7644655C2B55105B002BB96C /* UIViewController+Ext.swift */,
 				764465662B55181F002BB96C /* AuthManager.swift */,
+				76324D3A2B57A1760068B68F /* Reuseidentifier.swift */,
+				76324D3C2B57A1950068B68F /* Nibbed.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -160,8 +162,6 @@
 			children = (
 				767D60BF2B4FB72B00CFFF1B /* Main.storyboard */,
 				767D60BD2B4FB72B00CFFF1B /* MainVC.swift */,
-				7644656D2B551F04002BB96C /* TodoVC.storyboard */,
-				7644656F2B551F0F002BB96C /* TodoVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -206,13 +206,13 @@
 				7618AFDA2B4FBCAF00C6F4D5 /* TodoAppWithFirebase.entitlements */,
 				7644655E2B551343002BB96C /* View */,
 				7618AFD12B4FBA7800C6F4D5 /* Utils */,
+				7618AFD42B4FBB1C00C6F4D5 /* ViewModel.swift */,
 				767D60B92B4FB72B00CFFF1B /* AppDelegate.swift */,
 				767D60BB2B4FB72B00CFFF1B /* SceneDelegate.swift */,
 				767D60C22B4FB72C00CFFF1B /* Assets.xcassets */,
 				767D60C42B4FB72C00CFFF1B /* LaunchScreen.storyboard */,
 				767D60C72B4FB72C00CFFF1B /* Info.plist */,
 				7618AF902B4FB9CD00C6F4D5 /* GoogleService-Info.plist */,
-				7618AFD42B4FBB1C00C6F4D5 /* ViewModel.swift */,
 				764465522B54F294002BB96C /* Config.xcconfig */,
 			);
 			path = TodoAppWithFirebase;
@@ -334,7 +334,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				767FC05B2B5657EC00C61A1B /* AddTodoVC.storyboard in Resources */,
-				7644656E2B551F04002BB96C /* TodoVC.storyboard in Resources */,
 				764465652B55165F002BB96C /* SplashVC.storyboard in Resources */,
 				767D60C62B4FB72C00CFFF1B /* LaunchScreen.storyboard in Resources */,
 				767FC0542B5654AD00C61A1B /* TodoListCell.xib in Resources */,
@@ -352,14 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				764465702B551F0F002BB96C /* TodoVC.swift in Sources */,
 				7618AFD52B4FBB1C00C6F4D5 /* ViewModel.swift in Sources */,
 				764465672B55181F002BB96C /* AuthManager.swift in Sources */,
+				76324D3D2B57A1950068B68F /* Nibbed.swift in Sources */,
 				767D60BE2B4FB72B00CFFF1B /* MainVC.swift in Sources */,
 				767FC0562B5654CB00C61A1B /* TodoListCell.swift in Sources */,
 				7644655D2B55105B002BB96C /* UIViewController+Ext.swift in Sources */,
 				767FC0592B5657E400C61A1B /* AddTodoVC.swift in Sources */,
 				7618AFD92B4FBB4A00C6F4D5 /* LoginVC.swift in Sources */,
+				76324D3B2B57A1760068B68F /* Reuseidentifier.swift in Sources */,
 				767D60BA2B4FB72B00CFFF1B /* AppDelegate.swift in Sources */,
 				764465632B55163B002BB96C /* SplashVC.swift in Sources */,
 				767D60BC2B4FB72B00CFFF1B /* SceneDelegate.swift in Sources */,

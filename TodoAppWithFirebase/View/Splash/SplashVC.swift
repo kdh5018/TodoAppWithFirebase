@@ -22,7 +22,7 @@ class SplashVC: UIViewController {
         
         // 저장된 uid 체크
         if let uid = UserDefaults.standard.string(forKey: "uid") {
-            self.navigationController?.pushViewController(MainVC.getInstance(), animated: true)
+            self.navigationController?.pushViewController(MainVC.getInstance("Main"), animated: true)
         } else {
             self.navigationController?.pushViewController(LoginVC.getInstance(), animated: true)
         }

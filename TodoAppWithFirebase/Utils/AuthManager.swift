@@ -73,7 +73,7 @@ final class AuthManager : NSObject {
                     }
                 }
             }
-        }
+        } // fetchKakaoOpenIDToken
         
         
         fetchKakaoOpenIDToken(completion: { idToken, error in
@@ -133,7 +133,7 @@ final class AuthManager : NSObject {
             }
             
             return String(nonce)
-        }
+        } // randomNonceString
         
         @available(iOS 13, *)
         func sha256(_ input: String) -> String {
@@ -160,7 +160,7 @@ final class AuthManager : NSObject {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-    }
+    } // startSignInWithAppleFlow
     
     
 }
@@ -212,7 +212,7 @@ extension AuthManager: ASAuthorizationControllerDelegate {
                 self.appleLoginCompletion?(uid, nil)
             }
         }
-    }
+    } // authorizationController
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         // Handle error.
