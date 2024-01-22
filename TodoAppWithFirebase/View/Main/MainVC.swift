@@ -10,6 +10,9 @@ import SnapKit
 import FirebaseDatabaseInternal
 
 struct TodoEntity {
+    
+    var refId: String?
+    
     var todo: String?
     //    var detail: String?
     //    var date: String?
@@ -55,10 +58,12 @@ class MainVC: UIViewController {
             self.todoList = []
             
             for child in snapshot.children {
-                let childSnapShot = child as? DataSnapshot
-                let value = childSnapShot?.value as? NSDictionary
+                guard let childSnapShot = child as? DataSnapshot else { return }
+                let value = childSnapShot.value as? NSDictionary
                 let todo = value?["todo"] as? String ?? ""
-                let fetchedTodoEntity = TodoEntity(todo: todo)
+                
+                let fetchedTodoEntity = TodoEntity(refId: childSnapShot.key, todo: todo)
+                
                 print(#fileID, #function, #line, "- fetchedTodoEntity: \(fetchedTodoEntity)")
                 self.todoList.append(fetchedTodoEntity)
             }
@@ -120,10 +125,14 @@ class MainVC: UIViewController {
     
     @objc func addTodo() {
         print(#fileID, #function, #line, "- 할 일 추가")
-        guard let newInput = testTextField.text else { return }
-        let newTodo = TodoEntity(todo: newInput)
         
-        self.ref?.child("todos").setValue(["todo": newTodo.todo])
+        guard let userInput: String = testTextField.text, userInput.count > 0 else {
+            // 글자 입력하라고 알려주기
+            return
+        }
+
+        
+        self.ref?.childByAutoId().setValue(["todo": userInput])
         
         testTextField.text = ""
     }
@@ -155,11 +164,12 @@ extension MainVC: UITableViewDelegate {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "삭제", handler: { _,_,_  in
             print(#fileID, #function, #line, "- 삭제: \(indexPath)")
-            // 1. 데이터 지우기
-            self.todoList.remove(at: indexPath.row)
             
-            // 2. 셀 reload
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let todoToBeDeleted = self.todoList[indexPath.row]
+            
+            self.ref?
+                .child(todoToBeDeleted.refId ?? "").removeValue()
+            
         })
         
         let cellConfig = UISwipeActionsConfiguration(actions: [
